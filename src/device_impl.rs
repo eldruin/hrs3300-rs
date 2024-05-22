@@ -64,7 +64,7 @@ where
         self.write_register(Register::PDRIVER, pdriver | BitFlags::OSC)
     }
 
-    /// Enable the oscillator.
+    /// Disable the oscillator.
     pub fn disable_oscillator(&mut self) -> Result<(), Error<E>> {
         let pdriver = self.read_register(Register::PDRIVER)?;
         self.write_register(Register::PDRIVER, pdriver & !BitFlags::OSC)
